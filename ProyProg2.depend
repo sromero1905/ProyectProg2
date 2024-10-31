@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1730403484 source:c:\users\santiago\desktop\proyprog2\main.cpp
+	<iostream>
+
+1730403484 source:c:\users\santiago\desktop\proyprog2\src\main.cpp
+	<iostream>
+
+1730403591 source:c:\users\santiago\desktop\proyprog2\src\modulohistorialventas.cpp
+
+1730403745 source:c:\users\santiago\desktop\proyprog2\src\moduloinventario.cpp
+	<iostream>
+
+1730403568 source:c:\users\santiago\desktop\proyprog2\src\modulopromociones.cpp
+
+1730403613 source:c:\users\santiago\desktop\proyprog2\src\moduloreportes.cpp
+
+1730403544 source:c:\users\santiago\desktop\proyprog2\src\moduloventas.cpp
+
+1730403996 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
+

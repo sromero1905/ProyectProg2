@@ -1,0 +1,2 @@
+1,remeras
+2,pantalones

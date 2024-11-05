@@ -1,9 +1,12 @@
+// main.cpp
 #include <iostream>
 #include "ModuloInventario.h"
 #include "ModuloVentas.h"
 #include "ModuloPromociones.h"
 #include "ModuloHistorialVentas.h"
 #include "ModuloReportes.h"
+
+using namespace std;
 
 void mostrarMenuPrincipal();
 
@@ -15,38 +18,26 @@ int main() {
 void mostrarMenuPrincipal() {
     int opcion;
     do {
-        std::cout << "----- Menú Principal -----" << std::endl;
-        std::cout << "1. Gestión de Inventario" << std::endl;
-        std::cout << "2. Registro de Ventas" << std::endl;
-        std::cout << "3. Gestión de Promociones" << std::endl;
-        std::cout << "4. Historial de Ventas" << std::endl;
-        std::cout << "5. Reportes" << std::endl;
-        std::cout << "6. Salir" << std::endl;
-        std::cout << "Selecciona una opción: ";
-        std::cin >> opcion;
+        cout << "----- Menú Principal -----\n";
+        cout << "1. Gestión de Inventario\n";
+        cout << "2. Registro de Ventas\n";
+        cout << "3. Gestión de Promociones\n";
+        cout << "4. Historial de Ventas\n";
+        cout << "5. Reportes\n";
+        cout << "6. Salir\n";
+        cout << "Selecciona una opción: ";
+        cin >> opcion;
 
         switch (opcion) {
             case 1:
-                gestionarInventario();
+                gestionarInventario(); // Llama a la función del módulo de inventario
                 break;
-            case 2:
-                registrarVenta();
-                break;
-            case 3:
-                gestionarPromociones();
-                break;
-            case 4:
-                verHistorialVentas();
-                break;
-            case 5:
-                generarReportes();
-                break;
+
             case 6:
-                std::cout << "Saliendo del programa." << std::endl;
+                cout << "Saliendo del programa.\n";
                 break;
             default:
-                std::cout << "Opción no válida, intenta de nuevo." << std::endl;
+                cout << "Opción no válida, intenta de nuevo.\n";
         }
     } while (opcion != 6);
 }
-

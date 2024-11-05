@@ -1,6 +1,11 @@
 # depslib dependency file v1.0
-1730403484 source:c:\users\santiago\desktop\proyprog2\main.cpp
+1730766598 source:c:\users\santiago\desktop\proyprog2\main.cpp
 	<iostream>
+	"ModuloInventario.h"
+	"ModuloVentas.h"
+	"ModuloPromociones.h"
+	"ModuloHistorialVentas.h"
+	"ModuloReportes.h"
 
 1730403484 source:c:\users\santiago\desktop\proyprog2\src\main.cpp
 	<iostream>
@@ -16,5 +21,44 @@
 
 1730403544 source:c:\users\santiago\desktop\proyprog2\src\moduloventas.cpp
 
-1730403996 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
+1730465579 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
+
+1730817060 c:\users\santiago\desktop\proyprog2\moduloinventario.h
+	<vector>
+	<string>
+
+1730465579 c:\users\santiago\desktop\proyprog2\moduloventas.h
+
+1730465579 c:\users\santiago\desktop\proyprog2\modulopromociones.h
+
+1730465579 c:\users\santiago\desktop\proyprog2\modulohistorialventas.h
+
+1730465579 c:\users\santiago\desktop\proyprog2\moduloreportes.h
+
+1730465579 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+
+1730817175 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
+	"ModuloInventario.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+
+1730465579 source:c:\users\santiago\desktop\proyprog2\modulopromociones.cpp
+
+1730465579 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
+
+1730465579 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
+
+1730765706 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
+	<string>
+	<vector>
+
+1730765872 source:c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.cpp
+	"FuncionesAuxiliares.h"
+	<fstream>
+	<iostream>
+	<iomanip>
+	<limits>
+	<sstream>
 

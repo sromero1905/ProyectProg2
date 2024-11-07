@@ -1,13 +1,14 @@
-// ModuloReportes.h
 #ifndef MODULOREPORTES_H
 #define MODULOREPORTES_H
 
-#include <string>
+#include <iostream>
 #include <vector>
+#include <string>
+#include <unordered_map>
 
 using namespace std;
 
-// Declaración de la clase Venta
+// Clase Venta
 class Venta {
 public:
     string fecha;
@@ -17,17 +18,18 @@ public:
     double precioUnitario;
     double total;
 
-    // Constructor de la clase Venta
-    Venta(string f, string nc, string p, int c, double pu, double t);
+    Venta(string f, string nc, string p, int c, double pu, double t)
+        : fecha(f), nombreCliente(nc), producto(p), cantidad(c), precioUnitario(pu), total(t) {}
 };
 
-// Declaraciones de funciones para los reportes
-vector<Venta> cargarVentas(const string& nombreArchivo);
-void menuReportes(const vector<Venta>& ventas);
+// Funciones para cargar ventas y generar reportes
+vector<Venta> cargarVentas();
+void encontrarProductoMasYMenosVendido(const unordered_map<string, int>& productosVendidos, string& productoMasVendido, string& productoMenosVendido);
+
+// Funciones de reporte
 void reporteVentasPorDia(const vector<Venta>& ventas, const string& fecha);
 void reporteVentasPorMes(const vector<Venta>& ventas, const string& mes);
 void reporteVentasPorAnio(const vector<Venta>& ventas, const string& anio);
-void reporteVentasPorCategoria(const vector<Venta>& ventas, const string& categoria);
-void reporteVentasPorProducto(const vector<Venta>& ventas, const string& producto);
+void Menureporte();
 
 #endif // MODULOREPORTES_H

@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+// ModuloInventario.cpp
 #include "ModuloInventario.h"
 #include <iostream>
 #include <fstream>
@@ -7,13 +6,9 @@
 #include <vector>
 
 using namespace std;
-
 // Definición de variables globales
 vector<Categoria> categorias;
 int siguienteIdCategoria = 1;
-
-// Constructor de Categoria
-Categoria::Categoria(int id, string nombre) : id(id), nombre(nombre) {}
 
 // Constructor de Producto
 Producto::Producto(string nombre, string descripcion, int categoriaId, double precio, int stock)
@@ -198,5 +193,3 @@ void gestionarInventario() {
         }
     } while (opcion != 5);
 }
->>>>>>> Stashed changes
-

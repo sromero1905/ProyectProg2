@@ -1,54 +1,39 @@
-<<<<<<< Updated upstream
-#ifndef MODULOINVENTARIO_H_INCLUDED
-#define MODULOINVENTARIO_H_INCLUDED
-
-
-
-#endif // MODULOINVENTARIO_H_INCLUDED
-=======
 #ifndef MODULO_INVENTARIO_H
 #define MODULO_INVENTARIO_H
 
-#include <string>
 #include <vector>
+#include <string>
 
-using namespace std;
-
-// Clase Categoria
+// Clase para representar una categoría
 class Categoria {
 public:
     int id;
-    string nombre;
+    std::string nombre;
 
-    // Constructor de Categoria
-    Categoria(int id, string nombre);
+    Categoria(int id, std::string nombre) : id(id), nombre(nombre) {}
 };
 
-// Clase Producto
+// Clase para representar un producto
 class Producto {
 public:
-    string nombre;
-    string descripcion;
-    int categoriaId;
+    std::string nombre;
+    std::string descripcion;
+    int categoriaId; // ID de la categoría
     double precio;
     int stock;
 
-    // Constructor de Producto
-    Producto(string nombre, string descripcion, int categoriaId, double precio, int stock);
-
-    // Métodos para convertir Producto a string y viceversa
-    string toString() const;
-    static Producto fromString(const string& data);
+    Producto(std::string nombre, std::string descripcion, int categoriaId, double precio, int stock);
+    std::string toString() const;
+    static Producto fromString(const std::string& data);
 };
 
-// Funciones para gestionar el inventario
+// Funciones para gestionar inventario y categorías
+void gestionarInventario();
+void cargarCategorias();
 void agregarProducto();
 void agregarCategoria();
-void listarCategorias();
-void cargarCategorias();
 void consultarStock();
-void gestionarInventario();
+void listarCategorias();
 
 #endif // MODULO_INVENTARIO_H
 
->>>>>>> Stashed changes

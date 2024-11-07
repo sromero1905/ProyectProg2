@@ -1,11 +1,30 @@
 # depslib dependency file v1.0
-1730766598 source:c:\users\santiago\desktop\proyprog2\main.cpp
+12 <<<<<<< HEAD
+
+12 <<<<<<< Updated upstream
+
+1731007386 source:c:\users\santiago\desktop\proyprog2\main.cpp
 	<iostream>
 	"ModuloInventario.h"
 	"ModuloVentas.h"
 	"ModuloPromociones.h"
 	"ModuloHistorialVentas.h"
 	"ModuloReportes.h"
+
+1730765872 shed changes
+
+1730765872 c1c66383456d02d08b6feb71374cd8e929c41
+	<iostream>
+	"ModuloInventario.h"
+	"ModuloVentas.h"
+	"ModuloPromociones.h"
+	"ModuloHistorialVentas.h"
+	"ModuloReportes.h"
+	"ModuloInventario.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
 
 1730403484 source:c:\users\santiago\desktop\proyprog2\src\main.cpp
 	<iostream>
@@ -21,9 +40,13 @@
 
 1730403544 source:c:\users\santiago\desktop\proyprog2\src\moduloventas.cpp
 
+1730765872 D
+
+1730403544 ated upstream
+
 1730465579 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
 
-1730817060 c:\users\santiago\desktop\proyprog2\moduloinventario.h
+1731004791 c:\users\santiago\desktop\proyprog2\moduloinventario.h
 	<vector>
 	<string>
 
@@ -31,13 +54,23 @@
 
 1730465579 c:\users\santiago\desktop\proyprog2\modulopromociones.h
 
-1730465579 c:\users\santiago\desktop\proyprog2\modulohistorialventas.h
+1730989569 c:\users\santiago\desktop\proyprog2\modulohistorialventas.h
+	<string>
 
-1730465579 c:\users\santiago\desktop\proyprog2\moduloreportes.h
+1731007367 c:\users\santiago\desktop\proyprog2\moduloreportes.h
+	<iostream>
+	<vector>
+	<string>
+	<unordered_map>
 
-1730465579 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+1730989569 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+	"ModuloHistorialVentas.h"
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
 
-1730817175 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
+1731005628 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
 	"ModuloInventario.h"
 	<iostream>
 	<fstream>
@@ -46,15 +79,23 @@
 
 1730465579 source:c:\users\santiago\desktop\proyprog2\modulopromociones.cpp
 
-1730465579 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
+1731007427 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
+	<iostream>
+	<vector>
+	<string>
+	<unordered_map>
+	<fstream>
+	<sstream>
+
+1730989053 ortes.h"
 
 1730465579 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
 
-1730765706 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
+1730989777 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
 	<string>
 	<vector>
 
-1730765872 source:c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.cpp
+1730989777 source:c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.cpp
 	"FuncionesAuxiliares.h"
 	<fstream>
 	<iostream>

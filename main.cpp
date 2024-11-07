@@ -1,4 +1,3 @@
-// main.cpp
 #include <iostream>
 #include "ModuloInventario.h"
 #include "ModuloVentas.h"
@@ -28,11 +27,19 @@ void mostrarMenuPrincipal() {
         cout << "Selecciona una opción: ";
         cin >> opcion;
 
+        // Ejecuta la opción seleccionada
         switch (opcion) {
             case 1:
                 gestionarInventario(); // Llama a la función del módulo de inventario
                 break;
+            case 4:
+                mostrarMenuHistorialVentas();  // Llama al menú de historial de ventas
+                break;
+            case 5: {
+                Menureporte();
 
+                break;
+            }
             case 6:
                 cout << "Saliendo del programa.\n";
                 break;

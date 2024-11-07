@@ -1,3 +1,4 @@
 remera roja,es una remera,1,22.000000,22
 remera azul,es una remera azul,1,22000.000000,40
 pantalon negro cargo,es un pantalon negro cargo,2,400000.000000,50
+camisa blanca,es una camisa blanmca muy linda ,3,3000000.000000,350

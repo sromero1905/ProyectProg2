@@ -193,4 +193,3 @@ void gestionarInventario() {
         }
     } while (opcion != 5);
 }
-

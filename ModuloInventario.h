@@ -1,4 +1,3 @@
-// ModuloInventario.h
 #ifndef MODULO_INVENTARIO_H
 #define MODULO_INVENTARIO_H
 
@@ -29,7 +28,7 @@ public:
 };
 
 // Funciones para gestionar inventario y categorías
-void gestionarInventario(); // Solo declaración aquí
+void gestionarInventario();
 void cargarCategorias();
 void agregarProducto();
 void agregarCategoria();
@@ -37,3 +36,4 @@ void consultarStock();
 void listarCategorias();
 
 #endif // MODULO_INVENTARIO_H
+

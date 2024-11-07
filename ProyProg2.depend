@@ -1,5 +1,9 @@
 # depslib dependency file v1.0
+<<<<<<< Updated upstream
 1730403484 source:c:\users\santiago\desktop\proyprog2\main.cpp
+=======
+1730989067 source:c:\users\santiago\desktop\proyprog2\main.cpp
+>>>>>>> Stashed changes
 	<iostream>
 
 1730403484 source:c:\users\santiago\desktop\proyprog2\src\main.cpp
@@ -16,5 +20,62 @@
 
 1730403544 source:c:\users\santiago\desktop\proyprog2\src\moduloventas.cpp
 
+<<<<<<< Updated upstream
 1730403996 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
+=======
+1730465579 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
+
+1730983915 c:\users\santiago\desktop\proyprog2\moduloinventario.h
+	<string>
+	<vector>
+
+1730465579 c:\users\santiago\desktop\proyprog2\moduloventas.h
+
+1730465579 c:\users\santiago\desktop\proyprog2\modulopromociones.h
+
+1730984559 c:\users\santiago\desktop\proyprog2\modulohistorialventas.h
+	<string>
+
+1730989417 c:\users\santiago\desktop\proyprog2\moduloreportes.h
+	<string>
+	<vector>
+
+1730985532 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+	"ModuloHistorialVentas.h"
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+
+1730983915 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
+	"ModuloInventario.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+
+1730465579 source:c:\users\santiago\desktop\proyprog2\modulopromociones.cpp
+
+1730989053 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<iomanip>
+	"ModuloReportes.h"
+
+1730465579 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
+
+1730765706 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
+	<string>
+	<vector>
+
+1730765872 source:c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.cpp
+	"FuncionesAuxiliares.h"
+	<fstream>
+	<iostream>
+	<iomanip>
+	<limits>
+	<sstream>
+>>>>>>> Stashed changes
 

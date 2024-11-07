@@ -25,6 +25,7 @@ void mostrarMenuPrincipal() {
         std::cout << "Selecciona una opción: ";
         std::cin >> opcion;
 
+        // Ejecuta la opción seleccionada
         switch (opcion) {
             case 1:
                 gestionarInventario();
@@ -41,6 +42,17 @@ void mostrarMenuPrincipal() {
             case 5:
                 generarReportes();
                 break;
+<<<<<<< Updated upstream
+=======
+            case 4:
+                mostrarMenuHistorialVentas();  // Llama al menú de historial de ventas
+                break;
+            case 5: {
+                vector<Venta> ventas = cargarVentas("ventas.txt");  // Cargar ventas desde el archivo
+                menuReportes(ventas);  // Llama al menú de reportes y pasa las ventas cargadas
+                break;
+            }
+>>>>>>> Stashed changes
             case 6:
                 std::cout << "Saliendo del programa." << std::endl;
                 break;

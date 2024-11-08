@@ -1,0 +1,16 @@
+#include <iostream>
+#include "Utilidades.h"
+#include "RegistroVentas.h"
+
+int main() {
+    std::vector<Producto> productos = {
+        {"ProductoA", 10, 100.0, true, 0.10},
+        {"ProductoB", 5, 200.0, false, 0.0},
+        {"ProductoC", 15, 150.0, true, 0.20}
+    };
+
+    // Registrar una venta
+    registrarVenta(productos);
+
+    return 0;
+}

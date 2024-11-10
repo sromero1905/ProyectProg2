@@ -10,14 +10,13 @@ using namespace std;
 class Venta {
 public:
     string fecha;
-    string nombreCliente;
     string producto;
     int cantidad;
     double precioUnitario;
     double total;
 
-    Venta(string f, string nc, string p, int c, double pu, double t)
-        : fecha(f), nombreCliente(nc), producto(p), cantidad(c), precioUnitario(pu), total(t) {}
+    Venta(string f, string p, int c, double pu, double t)
+        : fecha(f), producto(p), cantidad(c), precioUnitario(pu), total(t) {}
 };
 
 // Función para cargar las ventas desde un archivo
@@ -35,12 +34,11 @@ vector<Venta> cargarVentas() {
     while (getline(archivo, linea)) {
         if (!linea.empty()) {
             stringstream ss(linea);
-            string fecha, nombreCliente, producto;
+            string fecha, producto;
             int cantidad;
             double precioUnitario, total;
 
             getline(ss, fecha, ',');
-            getline(ss, nombreCliente, ',');
             getline(ss, producto, ',');
             ss >> cantidad;
             ss.ignore();
@@ -48,7 +46,7 @@ vector<Venta> cargarVentas() {
             ss.ignore();
             ss >> total;
 
-            ventas.push_back(Venta(fecha, nombreCliente, producto, cantidad, precioUnitario, total));
+            ventas.push_back(Venta(fecha, producto, cantidad, precioUnitario, total));
         }
     }
 
@@ -81,7 +79,7 @@ void reporteVentasPorDia(const vector<Venta>& ventas, const string& fecha) {
 
     for (const Venta& venta : ventas) {
         if (venta.fecha == fecha) {
-            cout << "Venta: " << venta.nombreCliente << " - " << venta.producto << " - $" << venta.total << endl;
+            cout << "Venta: " << venta.producto << " - $" << venta.total << endl;
             totalIngresado += venta.total;
             cantidadTotal += venta.cantidad;
             productosVendidos[venta.producto] += venta.cantidad;
@@ -158,6 +156,7 @@ void reporteVentasPorAnio(const vector<Venta>& ventas, const string& anio) {
         cout << "Producto menos vendido en el año: " << productoMenosVendido << endl;
     }
 }
+
 // Menú principal
 void Menureporte() {
     vector<Venta> ventas = cargarVentas();

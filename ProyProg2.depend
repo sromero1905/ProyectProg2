@@ -103,3 +103,68 @@
 	<limits>
 	<sstream>
 
+1731007585 source:c:\users\santiago\desktop\proyectprog2-main\modulohistorialventas.cpp
+	"ModuloHistorialVentas.h"
+	<iostream>
+	<fstream>
+	<vector>
+	<sstream>
+
+1731007585 c:\users\santiago\desktop\proyectprog2-main\modulohistorialventas.h
+	<string>
+
+1731007585 source:c:\users\santiago\desktop\proyectprog2-main\moduloinventario.cpp
+	"ModuloInventario.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+
+1731007585 c:\users\santiago\desktop\proyectprog2-main\moduloinventario.h
+	<vector>
+	<string>
+
+1731007585 source:c:\users\santiago\desktop\proyectprog2-main\modulopromociones.cpp
+
+1731007585 source:c:\users\santiago\desktop\proyectprog2-main\moduloreportes.cpp
+	<iostream>
+	<vector>
+	<string>
+	<unordered_map>
+	<fstream>
+	<sstream>
+
+1731007585 source:c:\users\santiago\desktop\proyectprog2-main\utils\funcionesauxiliares.cpp
+	"FuncionesAuxiliares.h"
+	<fstream>
+	<iostream>
+	<iomanip>
+	<limits>
+	<sstream>
+
+1731007585 c:\users\santiago\desktop\proyectprog2-main\utils\funcionesauxiliares.h
+	<string>
+	<vector>
+
+1731270110 source:c:\users\santiago\desktop\proyectprog2-main\main.cpp
+	<iostream>
+	"ModuloInventario.h"
+	"ModuloVentas.h"
+	"ModuloPromociones.h"
+	"ModuloHistorialVentas.h"
+	"ModuloReportes.h"
+
+1731270110 c:\users\santiago\desktop\proyectprog2-main\moduloventas.h
+	<vector>
+	<string>
+	"ModuloInventario.h"
+	"ModuloReportes.h"
+
+1731270438 c:\users\santiago\desktop\proyectprog2-main\moduloreportes.h
+	<iostream>
+	<vector>
+	<string>
+	<unordered_map>
+
+1731007585 c:\users\santiago\desktop\proyectprog2-main\modulopromociones.h
+

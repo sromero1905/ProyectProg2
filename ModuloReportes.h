@@ -12,14 +12,13 @@ using namespace std;
 class Venta {
 public:
     string fecha;
-    string nombreCliente;
     string producto;
     int cantidad;
     double precioUnitario;
     double total;
 
-    Venta(string f, string nc, string p, int c, double pu, double t)
-        : fecha(f), nombreCliente(nc), producto(p), cantidad(c), precioUnitario(pu), total(t) {}
+    Venta(string f, string p, int c, double pu, double t)
+        : fecha(f), producto(p), cantidad(c), precioUnitario(pu), total(t) {}
 };
 
 // Funciones para cargar ventas y generar reportes

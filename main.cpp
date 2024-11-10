@@ -1,6 +1,6 @@
 #include <iostream>
 #include "ModuloInventario.h"
-#include "ModuloVentas.h"
+#include "ModuloVentas.h"       // Incluir el módulo de ventas
 #include "ModuloPromociones.h"
 #include "ModuloHistorialVentas.h"
 #include "ModuloReportes.h"
@@ -32,14 +32,21 @@ void mostrarMenuPrincipal() {
             case 1:
                 gestionarInventario(); // Llama a la función del módulo de inventario
                 break;
+            case 2: {
+                // Gestión de Ventas
+                ModuloVentas moduloVentas;
+                moduloVentas.mostrarMenuVentas(); // Llama al menú de ventas
+                break;
+            }
+            case 3:
+                // Implementar gestión de promociones
+                break;
             case 4:
                 mostrarMenuHistorialVentas();  // Llama al menú de historial de ventas
                 break;
-            case 5: {
-                Menureporte();
-
+            case 5:
+                Menureporte(); // Llama al menú de reportes
                 break;
-            }
             case 6:
                 cout << "Saliendo del programa.\n";
                 break;
@@ -48,3 +55,4 @@ void mostrarMenuPrincipal() {
         }
     } while (opcion != 6);
 }
+

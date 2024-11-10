@@ -1,0 +1,126 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <iomanip>
+
+// Estructura para representar una promoción
+struct Promocion {
+    std::string tipo; // Puede ser "porcentaje" o "absoluto"
+    double valor;     // Valor del descuento
+};
+
+// Estructura para representar un producto
+struct Producto {
+    std::string nombre;
+    double precio;
+};
+
+// Función para definir una promoción y guardarla en el archivo promociones.txt
+void definirPromocion() {
+    std::ofstream archivo("promociones.txt", std::ios::app); // Abrir el archivo en modo añadir
+    if (!archivo) {
+        std::cerr << "Error al abrir el archivo promociones.txt" << std::endl;
+        return;
+    }
+
+    Promocion promocion;
+    std::cout << "Ingrese el tipo de promoción (porcentaje o absoluto): ";
+    std::cin >> promocion.tipo;
+
+    // Validación del tipo de promoción
+    while (promocion.tipo != "porcentaje" && promocion.tipo != "absoluto") {
+        std::cout << "Tipo inválido. Ingrese 'porcentaje' o 'absoluto': ";
+        std::cin >> promocion.tipo;
+    }
+
+    std::cout << "Ingrese el valor de la promoción: ";
+    std::cin >> promocion.valor;
+
+    // Guardar la promoción en el archivo
+    archivo << promocion.tipo << " " << promocion.valor << "\n";
+    archivo.close();
+
+    std::cout << "Promoción guardada exitosamente.\n";
+}
+
+// Función para cargar las promociones desde el archivo promociones.txt
+std::vector<Promocion> cargarPromociones() {
+    std::vector<Promocion> promociones;
+    std::ifstream archivo("promociones.txt");
+
+    if (!archivo) {
+        std::cerr << "Error al abrir el archivo promociones.txt" << std::endl;
+        return promociones;
+    }
+
+    Promocion promocion;
+    while (archivo >> promocion.tipo >> promocion.valor) {
+        promociones.push_back(promocion);
+    }
+
+    archivo.close();
+    return promociones;
+}
+
+// Función para aplicar descuento a un producto según las promociones disponibles
+void aplicarDescuento(Producto &producto) {
+    auto promociones = cargarPromociones();
+
+    if (promociones.empty()) {
+        std::cout << "No hay promociones disponibles.\n";
+        return;
+    }
+
+    for (const auto &promocion : promociones) {
+        if (promocion.tipo == "porcentaje") {
+            producto.precio -= producto.precio * (promocion.valor / 100.0);
+        } else if (promocion.tipo == "absoluto") {
+            producto.precio -= promocion.valor;
+        }
+    }
+
+    // Validar que el precio no sea negativo
+    if (producto.precio < 0) {
+        producto.precio = 0;
+    }
+
+    std::cout << "Precio del producto después de aplicar promociones: $" << std::fixed << std::setprecision(2) << producto.precio << "\n";
+}
+
+// Función principal para probar la funcionalidad
+int main() {
+    int opcion;
+    Producto producto;
+
+    do {
+        std::cout << "\nMenú:\n";
+        std::cout << "1. Definir una promoción\n";
+        std::cout << "2. Aplicar descuento a un producto\n";
+        std::cout << "3. Salir\n";
+        std::cout << "Seleccione una opción: ";
+        std::cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                definirPromocion();
+                break;
+            case 2:
+                std::cout << "Ingrese el nombre del producto: ";
+                std::cin >> producto.nombre;
+                std::cout << "Ingrese el precio del producto: ";
+                std::cin >> producto.precio;
+                aplicarDescuento(producto);
+                break;
+            case 3:
+                std::cout << "Saliendo del programa.\n";
+                break;
+            default:
+                std::cout << "Opción no válida. Intente de nuevo.\n";
+                break;
+        }
+    } while (opcion != 3);
+
+    return 0;
+}

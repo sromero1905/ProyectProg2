@@ -1,4 +1,5 @@
 #include "ModuloVentas.h"
+#include "ModuloInventario.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -66,7 +67,7 @@ void ModuloVentas::registrarVenta() {
             return;
         }
 
-        Producto productoEncontrado("", "", categoriaId, 0, 0);
+        Producto productoEncontrado("", categoriaId, 0, 0);
         string line;
         bool productoExiste = false;
         while (getline(file, line)) {
@@ -84,6 +85,10 @@ void ModuloVentas::registrarVenta() {
                 ItemVenta item{productoEncontrado, cantidad};
                 itemsVenta.push_back(item);
                 subtotal += productoEncontrado.precio * cantidad;
+
+                // Actualizar el stock del producto en el archivo de inventario
+                actualizarStockProducto(productoEncontrado.nombre, productoEncontrado.categoriaId, -cantidad);
+
                 cout << "Producto agregado a la venta.\n";
             } else {
                 cout << "Stock insuficiente para el producto seleccionado.\n";
@@ -94,6 +99,42 @@ void ModuloVentas::registrarVenta() {
 
         cout << "¿Desea agregar otro producto? (1: Sí, 0: No): ";
         cin >> continuar;
+    }
+}
+void ModuloVentas::actualizarStockProducto(const string& nombre, int categoriaId, int cantidad) {
+    ifstream file("inventario.txt");
+    ofstream tempFile("temp.txt");
+
+    if (!file.is_open() || !tempFile.is_open()) {
+        cerr << "Error al abrir los archivos.\n";
+        return;
+    }
+
+    string line;
+    bool found = false;
+    while (getline(file, line)) {
+        Producto producto = Producto::fromString(line);
+        if (producto.nombre == nombre && producto.categoriaId == categoriaId) {
+            producto.stock += cantidad;  // Actualizamos el stock
+            // Escribimos el producto actualizado en el archivo temporal sin añadir un salto extra
+            tempFile << producto.toString();
+            found = true;
+        } else {
+            // Escribimos las líneas del archivo original sin cambios
+            tempFile << line << endl;
+        }
+    }
+
+    file.close();
+    tempFile.close();
+
+    if (found) {
+        // Eliminamos el archivo original y renombramos el archivo temporal
+        remove("inventario.txt");
+        rename("temp.txt", "inventario.txt");
+    } else {
+        remove("temp.txt");
+        cerr << "Producto no encontrado en el inventario.\n";
     }
 }
 

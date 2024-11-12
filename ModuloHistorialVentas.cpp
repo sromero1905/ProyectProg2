@@ -1,12 +1,11 @@
-#include "ModuloHistorialVentas.h"
+#include "modulohistorialventas.h"
 #include <iostream>
 #include <fstream>
-#include <vector>
-#include <sstream>
+#include <string>
+#include <unordered_map> // Para mapear ID de categorías
 
 using namespace std;
 
-// Implementación de las funciones del historial de ventas
 void ModuloHistorialVentas::verHistorialVentas() {
     ifstream file("ventas.txt");
     if (!file.is_open()) {
@@ -15,7 +14,7 @@ void ModuloHistorialVentas::verHistorialVentas() {
     }
 
     string line;
-    cout << "Historial de Ventas:\n";
+    cout << "--- Historial Completo de Ventas ---\n";
     while (getline(file, line)) {
         cout << line << endl;
     }
@@ -23,40 +22,10 @@ void ModuloHistorialVentas::verHistorialVentas() {
 }
 
 void ModuloHistorialVentas::buscarPorFecha() {
-    int opcionFecha;
     string fecha;
-    cout << "1. Buscar por fecha exacta\n";
-    cout << "2. Buscar por mes\n";
-    cout << "3. Buscar por año\n";
-    cout << "Selecciona una opción: ";
-    cin >> opcionFecha;
-    cin.ignore(); // Limpiar el buffer de entrada
+    cout << "Ingrese la fecha (ejemplo: 2023-12-31): ";
+    getline(cin, fecha);
 
-    switch (opcionFecha) {
-        case 1: {
-            cout << "Ingrese la fecha exacta (YYYY-MM-DD): ";
-            getline(cin, fecha);
-            buscarPorFechaExacta(fecha);
-            break;
-        }
-        case 2: {
-            cout << "Ingrese el mes (YYYY-MM): ";
-            getline(cin, fecha);
-            buscarPorMes(fecha);
-            break;
-        }
-        case 3: {
-            cout << "Ingrese el año (YYYY): ";
-            getline(cin, fecha);
-            buscarPorAnio(fecha);
-            break;
-        }
-        default:
-            cout << "Opción no válida.\n";
-    }
-}
-
-void ModuloHistorialVentas::buscarPorFechaExacta(const string& fecha) {
     ifstream file("ventas.txt");
     if (!file.is_open()) {
         cerr << "Error al abrir el archivo de ventas.\n";
@@ -64,7 +33,7 @@ void ModuloHistorialVentas::buscarPorFechaExacta(const string& fecha) {
     }
 
     string line;
-    cout << "Ventas en la fecha exacta: " << fecha << "\n";
+    cout << "Ventas en la fecha: " << fecha << "\n";
     while (getline(file, line)) {
         if (line.find(fecha) != string::npos) {
             cout << line << endl;
@@ -151,15 +120,13 @@ void mostrarMenuHistorialVentas() {
         cout << "1. Ver historial de todas las ventas\n";
         cout << "2. Buscar ventas por fecha\n";
         cout << "3. Buscar ventas por producto\n";
-        cout << "4. Buscar ventas por categoría\n";
-        cout << "5. Volver al menú principal\n";
+        cout << "4. Volver al menú principal\n";
         cout << "Selecciona una opción: ";
         cin >> opcion;
         cin.ignore(); // Limpiar el buffer de entrada
 
         switch (opcion) {
             case 1: {
-                cout << "\n--- Historial Completo de Ventas ---\n";
                 historialVentas.verHistorialVentas();
                 break;
             }
@@ -174,19 +141,13 @@ void mostrarMenuHistorialVentas() {
                 historialVentas.buscarPorProducto(producto);
                 break;
             }
-            case 4: {
-                string categoria;
-                cout << "Ingrese el nombre de la categoría: ";
-                getline(cin, categoria);
-                historialVentas.buscarPorCategoria(categoria);
-                break;
-            }
+
+
             case 5:
                 cout << "Volviendo al menú principal.\n";
                 break;
             default:
                 cout << "Opción no válida, intenta de nuevo.\n";
         }
-    } while (opcion != 6);
+    } while (opcion != 5);
 }
-

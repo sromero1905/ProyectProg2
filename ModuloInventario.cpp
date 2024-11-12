@@ -1,4 +1,3 @@
-// ModuloInventario.cpp
 #include "ModuloInventario.h"
 #include <iostream>
 #include <fstream>
@@ -6,24 +5,26 @@
 #include <vector>
 
 using namespace std;
+
 // Definición de variables globales
 vector<Categoria> categorias;
 int siguienteIdCategoria = 1;
 
 // Constructor de Producto
-Producto::Producto(string nombre, string descripcion, int categoriaId, double precio, int stock)
-    : nombre(nombre), descripcion(descripcion), categoriaId(categoriaId), precio(precio), stock(stock) {}
+Producto::Producto(string nombre, int categoriaId, double precio, int stock)
+    : nombre(nombre), categoriaId(categoriaId), precio(precio), stock(stock) {}
 
+// Método para convertir un producto a string
 string Producto::toString() const {
-    return nombre + "," + descripcion + "," + to_string(categoriaId) + "," + to_string(precio) + "," + to_string(stock) + "\n";
+    return nombre + "," + to_string(categoriaId) + "," + to_string(precio) + "," + to_string(stock) + "\n";
 }
 
+// Método para convertir un string a un producto
 Producto Producto::fromString(const string& data) {
     stringstream ss(data);
-    string nombre, descripcion, categoriaIdStr, precioStr, stockStr;
+    string nombre, categoriaIdStr, precioStr, stockStr;
 
     getline(ss, nombre, ',');
-    getline(ss, descripcion, ',');
     getline(ss, categoriaIdStr, ',');
     getline(ss, precioStr, ',');
     getline(ss, stockStr, ',');
@@ -32,11 +33,12 @@ Producto Producto::fromString(const string& data) {
     double precio = stod(precioStr);
     int stock = stoi(stockStr);
 
-    return Producto(nombre, descripcion, categoriaId, precio, stock);
+    return Producto(nombre, categoriaId, precio, stock);
 }
 
+// Función para agregar un nuevo producto
 void agregarProducto() {
-    string nombre, descripcion;
+    string nombre;
     int categoriaId;
     double precio;
     int stock;
@@ -44,8 +46,6 @@ void agregarProducto() {
     cout << "Ingrese nombre del producto: ";
     cin.ignore();
     getline(cin, nombre);
-    cout << "Ingrese descripcion del producto: ";
-    getline(cin, descripcion);
 
     // Consultar categorías
     listarCategorias();
@@ -57,8 +57,9 @@ void agregarProducto() {
     cout << "Ingrese stock inicial: ";
     cin >> stock;
 
-    Producto nuevoProducto(nombre, descripcion, categoriaId, precio, stock);
+    Producto nuevoProducto(nombre, categoriaId, precio, stock);
 
+    // Guardar el producto en el archivo
     ofstream file("inventario.txt", ios::app);
     if (file.is_open()) {
         file << nuevoProducto.toString();
@@ -69,16 +70,18 @@ void agregarProducto() {
     }
 }
 
+// Función para agregar una nueva categoría
 void agregarCategoria() {
     string nombre;
     cout << "Ingrese el nombre de la nueva categoria: ";
     cin.ignore();
     getline(cin, nombre);
 
-    // Crear nueva categoría y agregar al vector
+    // Crear nueva categoría y agregarla al vector
     Categoria nuevaCategoria(siguienteIdCategoria++, nombre);
     categorias.push_back(nuevaCategoria);
 
+    // Guardar la categoría en el archivo
     ofstream file("categorias.txt", ios::app);
     if (file.is_open()) {
         file << nuevaCategoria.id << "," << nuevaCategoria.nombre << endl;
@@ -89,6 +92,7 @@ void agregarCategoria() {
     }
 }
 
+// Función para listar las categorías disponibles
 void listarCategorias() {
     cout << "\n--- Categorías ---\n";
     for (const auto& categoria : categorias) {
@@ -96,31 +100,35 @@ void listarCategorias() {
     }
 }
 
+// Función para cargar las categorías desde el archivo
 void cargarCategorias() {
     ifstream file("categorias.txt");
     if (!file.is_open()) {
         cerr << "Error al abrir el archivo de categorias.\n";
         return;
     }
-
     string line;
     while (getline(file, line)) {
         stringstream ss(line);
         string idStr, nombre;
         getline(ss, idStr, ',');
         getline(ss, nombre, ',');
-
-        int id = stoi(idStr);
-        categorias.push_back(Categoria(id, nombre));
-
-        // Actualiza el siguiente ID si es necesario
-        if (id >= siguienteIdCategoria) {
-            siguienteIdCategoria = id + 1;
+        try {
+            int id = stoi(idStr);
+            categorias.push_back(Categoria(id, nombre));
+            // Actualiza el siguiente ID si es necesario
+            if (id >= siguienteIdCategoria) {
+                siguienteIdCategoria = id + 1;
+            }
+        } catch (const std::invalid_argument& e) {
+            cerr << "Error: " << e.what() << endl;
+            cerr << "El ID de categoría '" << idStr << "' no es válido." << endl;
         }
     }
     file.close();
 }
 
+// Función para consultar el stock de productos
 void consultarStock() {
     ifstream file("inventario.txt");
     if (!file.is_open()) {
@@ -170,6 +178,7 @@ void consultarStock() {
     }
 }
 
+// Función principal para gestionar el inventario
 void gestionarInventario() {
     cargarCategorias();
     int opcion;

@@ -17,12 +17,11 @@ public:
 class Producto {
 public:
     std::string nombre;
-    std::string descripcion;
     int categoriaId; // ID de la categoría
     double precio;
     int stock;
 
-    Producto(std::string nombre, std::string descripcion, int categoriaId, double precio, int stock);
+    Producto(std::string nombre, int categoriaId, double precio, int stock);
     std::string toString() const;
     static Producto fromString(const std::string& data);
 };
@@ -36,4 +35,5 @@ void consultarStock();
 void listarCategorias();
 
 #endif // MODULO_INVENTARIO_H
+
 

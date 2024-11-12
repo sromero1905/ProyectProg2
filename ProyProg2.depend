@@ -3,7 +3,7 @@
 
 12 <<<<<<< Updated upstream
 
-1731007386 source:c:\users\santiago\desktop\proyprog2\main.cpp
+1731270606 source:c:\users\santiago\desktop\proyprog2\main.cpp
 	<iostream>
 	"ModuloInventario.h"
 	"ModuloVentas.h"
@@ -46,56 +46,65 @@
 
 1730465579 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
 
-1731004791 c:\users\santiago\desktop\proyprog2\moduloinventario.h
+1731426563 c:\users\santiago\desktop\proyprog2\moduloinventario.h
 	<vector>
 	<string>
 
-1730465579 c:\users\santiago\desktop\proyprog2\moduloventas.h
+1731425785 c:\users\santiago\desktop\proyprog2\moduloventas.h
+	<vector>
+	<string>
+	"ModuloInventario.h"
+	"ModuloReportes.h"
 
-1730465579 c:\users\santiago\desktop\proyprog2\modulopromociones.h
+1731270606 c:\users\santiago\desktop\proyprog2\modulopromociones.h
 
-1730989569 c:\users\santiago\desktop\proyprog2\modulohistorialventas.h
+1731424947 c:\users\santiago\desktop\proyprog2\modulohistorialventas.h
 	<string>
 
-1731007367 c:\users\santiago\desktop\proyprog2\moduloreportes.h
+1731270606 c:\users\santiago\desktop\proyprog2\moduloreportes.h
 	<iostream>
 	<vector>
 	<string>
 	<unordered_map>
 
-1730989569 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
-	"ModuloHistorialVentas.h"
+1731424947 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+	"modulohistorialventas.h"
 	<iostream>
 	<fstream>
-	<vector>
-	<sstream>
+	<string>
+	<unordered_map>
 
-1731005628 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
+1731426563 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
 	"ModuloInventario.h"
 	<iostream>
 	<fstream>
 	<sstream>
 	<vector>
 
-1730465579 source:c:\users\santiago\desktop\proyprog2\modulopromociones.cpp
+1731270606 source:c:\users\santiago\desktop\proyprog2\modulopromociones.cpp
 
-1731007427 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
-	<iostream>
-	<vector>
-	<string>
-	<unordered_map>
+1731413215 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
+	"ModuloReportes.h"
 	<fstream>
 	<sstream>
+	<unordered_map>
 
 1730989053 ortes.h"
 
-1730465579 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
+1731426628 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
+	"ModuloVentas.h"
+	"ModuloInventario.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<ctime>
+	<iomanip>
 
-1730989777 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
+1731270606 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
 	<string>
 	<vector>
 
-1730989777 source:c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.cpp
+1731270606 source:c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.cpp
 	"FuncionesAuxiliares.h"
 	<fstream>
 	<iostream>

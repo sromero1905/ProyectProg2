@@ -38,3 +38,7 @@
 2024-10-30,remera azul,1,22000,22000
 2024-11-12,camisa negra,1,4000,4000
 2024-11-12,camisa negra,2,4000,8000
+2024-11-12,remera roja,2,22,44
+2024-11-12,remera roja,1,400,400
+2024-11-12,remera azul,1,400,400
+2024-11-12,pantalon negro,1,450,450

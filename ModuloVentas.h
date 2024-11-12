@@ -25,7 +25,7 @@ private:
     void listarCategorias();                    // Muestra las categorías cargadas
     void listarProductosPorCategoria(int categoriaId); // Lista productos por categoría
     void guardarVentaEnArchivo(const Venta& venta);    // Guarda la venta en archivo
-
+    void actualizarStockProducto(const std::string& nombre, int categoriaId, int cantidad);
 public:
     void mostrarMenuVentas();            // Muestra el menú de ventas
     void registrarVenta();               // Registra una venta de productos

@@ -50,7 +50,7 @@
 	<vector>
 	<string>
 
-1731425785 c:\users\santiago\desktop\proyprog2\moduloventas.h
+1731429123 c:\users\santiago\desktop\proyprog2\moduloventas.h
 	<vector>
 	<string>
 	"ModuloInventario.h"
@@ -91,7 +91,7 @@
 
 1730989053 ortes.h"
 
-1731426628 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
+1731428844 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
 	"ModuloVentas.h"
 	"ModuloInventario.h"
 	<iostream>

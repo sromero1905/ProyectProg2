@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <unordered_map> // Para mapear ID de categorías
+#include <unordered_map>
 
 using namespace std;
 

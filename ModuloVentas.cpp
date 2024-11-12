@@ -39,7 +39,7 @@ void ModuloVentas::mostrarMenuVentas() {
 }
 
 void ModuloVentas::registrarVenta() {
-    subtotal = 0;
+    //subtotal = 0;
     int categoriaId, cantidad;
     string productoNombre;
     bool continuar = true;

@@ -1,2 +1,2 @@
-remera azul,1,400.000000,39
-pantalon negro,2,450.000000,19
+remera azul,1,1000.000000,18
+pantalon azul,2,1100.000000,19

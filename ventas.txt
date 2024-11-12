@@ -42,3 +42,9 @@
 2024-11-12,remera roja,1,400,400
 2024-11-12,remera azul,1,400,400
 2024-11-12,pantalon negro,1,450,450
+2024-11-12,pantalon negro,2,450,900
+2024-11-12,pantalon negro,1,450,450
+2024-11-12,remera azul,1,400,400
+2024-11-12,remera azul,1,1000,1000
+2024-11-12,remera azul,1,1000,1000
+2024-11-12,pantalon azul,1,1100,1100

@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <string>
-#include "ModuloInventario.h"  // Incluimos para utilizar Producto y Categoria
-#include "ModuloReportes.h"    // Incluimos para utilizar la clase Venta
+#include "ModuloInventario.h"
+#include "ModuloReportes.h"
 
 using namespace std;
 
@@ -17,21 +17,21 @@ struct ItemVenta {
 // Clase para gestionar las ventas
 class ModuloVentas {
 private:
-    vector<ItemVenta> itemsVenta;       // Lista de items en la venta actual
-    double subtotal = 0;                // Subtotal de la venta
-    double total = 0;                   // Total de la venta
+    vector<ItemVenta> itemsVenta;
+    double subtotal = 0;
+    double total = 0;
 
-    vector<Categoria> cargarCategoriasVentas(); // Carga categorías desde archivo
-    void listarCategorias();                    // Muestra las categorías cargadas
-    void listarProductosPorCategoria(int categoriaId); // Lista productos por categoría
-    void guardarVentaEnArchivo(const Venta& venta);    // Guarda la venta en archivo
+    vector<Categoria> cargarCategoriasVentas();
+    void listarCategorias();
+    void listarProductosPorCategoria(int categoriaId);
+    void guardarVentaEnArchivo(const Venta& venta);
     void actualizarStockProducto(const std::string& nombre, int categoriaId, int cantidad);
 public:
-    void mostrarMenuVentas();            // Muestra el menú de ventas
-    void registrarVenta();               // Registra una venta de productos
-    void finalizarVenta();               // Finaliza y guarda la venta
-    void cancelarVenta();                // Cancela la venta actual
-    string obtenerFechaActual();         // Obtiene la fecha actual
+    void mostrarMenuVentas();
+    void registrarVenta();
+    void finalizarVenta();
+    void cancelarVenta();
+    string obtenerFechaActual();
 };
 
 #endif // MODULO_VENTAS_H

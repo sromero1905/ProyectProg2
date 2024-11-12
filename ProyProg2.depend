@@ -3,7 +3,7 @@
 
 12 <<<<<<< Updated upstream
 
-1731270606 source:c:\users\santiago\desktop\proyprog2\main.cpp
+1731429120 source:c:\users\santiago\desktop\proyprog2\main.cpp
 	<iostream>
 	"ModuloInventario.h"
 	"ModuloVentas.h"
@@ -67,7 +67,7 @@
 	<string>
 	<unordered_map>
 
-1731424947 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+1731429121 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
 	"modulohistorialventas.h"
 	<iostream>
 	<fstream>

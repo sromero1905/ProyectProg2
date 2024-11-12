@@ -103,38 +103,36 @@
 	<limits>
 	<sstream>
 
-1731007585 source:c:\users\santiago\desktop\proyectprog2-main\modulohistorialventas.cpp
+1731270606 source:c:\users\santiago\desktop\proyectprog2-main\modulohistorialventas.cpp
 	"ModuloHistorialVentas.h"
 	<iostream>
 	<fstream>
 	<vector>
 	<sstream>
 
-1731007585 c:\users\santiago\desktop\proyectprog2-main\modulohistorialventas.h
+1731270606 c:\users\santiago\desktop\proyectprog2-main\modulohistorialventas.h
 	<string>
 
-1731007585 source:c:\users\santiago\desktop\proyectprog2-main\moduloinventario.cpp
+1731270606 source:c:\users\santiago\desktop\proyectprog2-main\moduloinventario.cpp
 	"ModuloInventario.h"
 	<iostream>
 	<fstream>
 	<sstream>
 	<vector>
 
-1731007585 c:\users\santiago\desktop\proyectprog2-main\moduloinventario.h
+1731270606 c:\users\santiago\desktop\proyectprog2-main\moduloinventario.h
 	<vector>
 	<string>
 
-1731007585 source:c:\users\santiago\desktop\proyectprog2-main\modulopromociones.cpp
+1731270606 source:c:\users\santiago\desktop\proyectprog2-main\modulopromociones.cpp
 
-1731007585 source:c:\users\santiago\desktop\proyectprog2-main\moduloreportes.cpp
-	<iostream>
-	<vector>
-	<string>
-	<unordered_map>
+1731413215 source:c:\users\santiago\desktop\proyectprog2-main\moduloreportes.cpp
+	"ModuloReportes.h"
 	<fstream>
 	<sstream>
+	<unordered_map>
 
-1731007585 source:c:\users\santiago\desktop\proyectprog2-main\utils\funcionesauxiliares.cpp
+1731270606 source:c:\users\santiago\desktop\proyectprog2-main\utils\funcionesauxiliares.cpp
 	"FuncionesAuxiliares.h"
 	<fstream>
 	<iostream>
@@ -142,11 +140,11 @@
 	<limits>
 	<sstream>
 
-1731007585 c:\users\santiago\desktop\proyectprog2-main\utils\funcionesauxiliares.h
+1731270606 c:\users\santiago\desktop\proyectprog2-main\utils\funcionesauxiliares.h
 	<string>
 	<vector>
 
-1731270110 source:c:\users\santiago\desktop\proyectprog2-main\main.cpp
+1731270606 source:c:\users\santiago\desktop\proyectprog2-main\main.cpp
 	<iostream>
 	"ModuloInventario.h"
 	"ModuloVentas.h"
@@ -154,17 +152,25 @@
 	"ModuloHistorialVentas.h"
 	"ModuloReportes.h"
 
-1731270110 c:\users\santiago\desktop\proyectprog2-main\moduloventas.h
+1731270606 c:\users\santiago\desktop\proyectprog2-main\moduloventas.h
 	<vector>
 	<string>
 	"ModuloInventario.h"
 	"ModuloReportes.h"
 
-1731270438 c:\users\santiago\desktop\proyectprog2-main\moduloreportes.h
+1731270606 c:\users\santiago\desktop\proyectprog2-main\moduloreportes.h
 	<iostream>
 	<vector>
 	<string>
 	<unordered_map>
 
-1731007585 c:\users\santiago\desktop\proyectprog2-main\modulopromociones.h
+1731270606 c:\users\santiago\desktop\proyectprog2-main\modulopromociones.h
+
+1731270606 source:c:\users\santiago\desktop\proyectprog2-main\moduloventas.cpp
+	"ModuloVentas.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<ctime>
+	<iomanip>
 

@@ -1,35 +1,40 @@
-2024-01-15, Juan Perez, Televisor LED, 2, 300.00, 600.00
-2024-01-20, Maria Lopez, Lavadora, 1, 450.00, 450.00
-2024-02-05, Carlos Diaz, Refrigerador, 1, 700.00, 700.00
-2024-02-18, Ana Gomez, Microondas, 3, 150.00, 450.00
-2024-03-02, Luis Martinez, Smartphone, 1, 800.00, 800.00
-2024-03-10, Sofia Ramirez, Televisor LED, 1, 300.00, 300.00
-2024-04-04, Daniel Torres, Licuadora, 2, 100.00, 200.00
-2024-04-15, Pablo Gutierrez, Refrigerador, 1, 750.00, 750.00
-2024-05-01, Marta Perez, Computadora, 1, 1200.00, 1200.00
-2024-05-20, Felipe Morales, Televisor LED, 1, 320.00, 320.00
-2024-06-10, Laura Hernandez, Lavadora, 2, 450.00, 900.00
-2024-06-15, Francisco Diaz, Smartphone, 1, 800.00, 800.00
-2024-07-07, Carmen Suarez, Microondas, 2, 150.00, 300.00
-2024-07-12, Juan Perez, Licuadora, 1, 120.00, 120.00
-2024-08-01, Hector Soto, Refrigerador, 1, 750.00, 750.00
-2024-08-05, Marta Perez, Smartphone, 1, 850.00, 850.00
-2024-09-03, Alicia Fernandez, Computadora, 1, 1100.00, 1100.00
-2024-09-10, Luis Martinez, Microondas, 1, 150.00, 150.00
-2024-10-01, Carlos Diaz, Licuadora, 3, 100.00, 300.00
-2024-10-07, Pablo Gutierrez, Televisor LED, 2, 320.00, 640.00
-2024-11-01, Sofia Ramirez, Smartphone, 1, 800.00, 800.00
-2024-11-05, Laura Hernandez, Computadora, 1, 1100.00, 1100.00
-2024-11-08, Daniel Torres, Lavadora, 2, 450.00, 900.00
-2024-12-10, Felipe Morales, Licuadora, 1, 100.00, 100.00
-2024-12-15, Ana Gomez, Refrigerador, 1, 750.00, 750.00
-2025-01-20, Marta Perez, Televisor LED, 1, 320.00, 320.00
-2025-01-25, Hector Soto, Microondas, 2, 150.00, 300.00
-2025-02-10, Alicia Fernandez, Smartphone, 1, 800.00, 800.00
-2025-03-05, Daniel Torres, Lavadora, 2, 450.00, 900.00
-2025-04-01, Luis Martinez, Licuadora, 1, 100.00, 100.00
-2025-04-15, Sofia Ramirez, Televisor LED, 2, 300.00, 600.00
-2025-05-08, Carlos Diaz, Refrigerador, 1, 750.00, 750.00
-2025-06-20, Marta Perez, Computadora, 1, 1100.00, 1100.00
-2025-07-10, Juan Perez, Smartphone, 1, 850.00, 850.00
-2025-08-01, Laura Hernandez, Lavadora, 1, 450.00, 450.00
+2024-11-12,remera roja,1,22000,22000
+2024-11-12,remera azul,1,22000,22000
+2024-11-13,pantalon negro cargo,2,400000,800000
+2024-11-13,camisa negra,3,4000,12000
+2024-11-14,remera roja,1,22000,22000
+2024-11-14,remera azul,1,22000,22000
+2024-11-15,pantalon negro cargo,2,400000,800000
+2024-11-15,camisa negra,3,4000,12000
+2024-11-16,remera roja,1,22000,22000
+2024-11-16,remera azul,1,22000,22000
+2024-11-17,pantalon negro cargo,2,400000,800000
+2024-11-17,camisa negra,3,4000,12000
+2024-11-18,remera roja,1,22000,22000
+2024-11-18,remera azul,1,22000,22000
+2024-11-19,pantalon negro cargo,2,400000,800000
+2024-11-19,camisa negra,3,4000,12000
+2024-11-20,remera roja,1,22000,22000
+2024-11-20,remera azul,1,22000,22000
+2024-11-21,pantalon negro cargo,2,400000,800000
+2024-11-21,camisa negra,3,4000,12000
+2024-11-22,remera roja,1,22000,22000
+2024-11-22,remera azul,1,22000,22000
+2024-11-23,pantalon negro cargo,2,400000,800000
+2024-11-23,camisa negra,3,4000,12000
+2024-11-24,remera roja,1,22000,22000
+2024-11-24,remera azul,1,22000,22000
+2024-11-25,pantalon negro cargo,2,400000,800000
+2024-11-25,camisa negra,3,4000,12000
+2024-11-26,remera roja,1,22000,22000
+2024-11-26,remera azul,1,22000,22000
+2024-11-27,pantalon negro cargo,2,400000,800000
+2024-11-27,camisa negra,3,4000,12000
+2024-10-28,remera roja,1,22000,22000
+2024-10-28,remera azul,1,22000,22000
+2024-10-29,pantalon negro cargo,2,400000,800000
+2024-10-29,camisa negra,3,4000,12000
+2024-10-30,remera roja,1,22000,22000
+2024-10-30,remera azul,1,22000,22000
+2024-11-12,camisa negra,1,4000,4000
+2024-11-12,camisa negra,2,4000,8000

@@ -1,174 +1,138 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <unordered_map>
+#include "ModuloReportes.h"
 #include <fstream>
 #include <sstream>
-using namespace std;
+#include <unordered_map>
 
-// Clase Venta
-class Venta {
-public:
-    string fecha;
-    string producto;
-    int cantidad;
-    double precioUnitario;
-    double total;
-
-    Venta(string f, string p, int c, double pu, double t)
-        : fecha(f), producto(p), cantidad(c), precioUnitario(pu), total(t) {}
-};
-
-// Función para cargar las ventas desde un archivo
+// Cargar ventas desde archivo de texto
 vector<Venta> cargarVentas() {
     vector<Venta> ventas;
-    string nombreArchivo = "ventas.txt";
-
-    ifstream archivo(nombreArchivo);
-    if (!archivo) {
-        cout << "No se pudo abrir el archivo " << nombreArchivo << endl;
-        return ventas;
-    }
-
+    ifstream archivo("ventas.txt");
     string linea;
+
     while (getline(archivo, linea)) {
-        if (!linea.empty()) {
-            stringstream ss(linea);
-            string fecha, producto;
-            int cantidad;
-            double precioUnitario, total;
+        stringstream ss(linea);
+        string fecha, producto, cantidadStr, precioUnitarioStr, totalStr;
 
-            getline(ss, fecha, ',');
-            getline(ss, producto, ',');
-            ss >> cantidad;
-            ss.ignore();
-            ss >> precioUnitario;
-            ss.ignore();
-            ss >> total;
+        // Separar datos por comas
+        getline(ss, fecha, ',');
+        getline(ss, producto, ',');
+        getline(ss, cantidadStr, ',');
+        getline(ss, precioUnitarioStr, ',');
+        getline(ss, totalStr, ',');
 
-            ventas.push_back(Venta(fecha, producto, cantidad, precioUnitario, total));
-        }
+        // Convertir los valores de cantidad, precio unitario y total
+        int cantidad = stoi(cantidadStr);
+        double precioUnitario = stod(precioUnitarioStr);
+        double total = stod(totalStr);
+
+        // Crear la venta y agregarla al vector
+        ventas.emplace_back(fecha, producto, cantidad, precioUnitario, total);
     }
 
     archivo.close();
     return ventas;
 }
 
-// Función para encontrar el producto más y menos vendido
+// Encontrar el producto más y menos vendido
 void encontrarProductoMasYMenosVendido(const unordered_map<string, int>& productosVendidos, string& productoMasVendido, string& productoMenosVendido) {
     int maxVentas = 0, minVentas = INT_MAX;
 
-    for (const auto& [producto, cantidad] : productosVendidos) {
-        if (cantidad > maxVentas) {
-            maxVentas = cantidad;
-            productoMasVendido = producto;
+    for (const auto& item : productosVendidos) {
+        if (item.second > maxVentas) {
+            maxVentas = item.second;
+            productoMasVendido = item.first;
         }
-        if (cantidad < minVentas) {
-            minVentas = cantidad;
-            productoMenosVendido = producto;
+        if (item.second < minVentas) {
+            minVentas = item.second;
+            productoMenosVendido = item.first;
         }
     }
 }
 
 // Reporte de ventas por día
 void reporteVentasPorDia(const vector<Venta>& ventas, const string& fecha) {
-    double totalIngresado = 0.0;
-    int cantidadTotal = 0;
+    int totalProductos = 0;
+    double totalRecaudado = 0.0;
     unordered_map<string, int> productosVendidos;
-    bool ventasEncontradas = false;
 
     for (const Venta& venta : ventas) {
         if (venta.fecha == fecha) {
-            cout << "Venta: " << venta.producto << " - $" << venta.total << endl;
-            totalIngresado += venta.total;
-            cantidadTotal += venta.cantidad;
+            totalProductos += venta.cantidad;
+            totalRecaudado += venta.total;
             productosVendidos[venta.producto] += venta.cantidad;
-            ventasEncontradas = true;
         }
     }
 
-    if (!ventasEncontradas) {
-        cout << "No se encontraron ventas para la fecha " << fecha << endl;
-    } else {
-        cout << "Total ingresado: $" << totalIngresado << endl;
-        cout << "Cantidad total de productos vendidos: " << cantidadTotal << endl;
+    string productoMasVendido, productoMenosVendido;
+    encontrarProductoMasYMenosVendido(productosVendidos, productoMasVendido, productoMenosVendido);
 
-        string productoMasVendido, productoMenosVendido;
-        encontrarProductoMasYMenosVendido(productosVendidos, productoMasVendido, productoMenosVendido);
-
-        cout << "Producto más vendido: " << productoMasVendido << endl;
-        cout << "Producto menos vendido: " << productoMenosVendido << endl;
-    }
+    cout << "Reporte de ventas para el dia " << fecha << ":\n";
+    cout << "Total de productos vendidos: " << totalProductos << "\n";
+    cout << "Total recaudado: $" << totalRecaudado << "\n";
+    cout << "Producto mas vendido: " << productoMasVendido << "\n";
+    cout << "Producto menos vendido: " << productoMenosVendido << "\n";
 }
 
 // Reporte de ventas por mes
 void reporteVentasPorMes(const vector<Venta>& ventas, const string& mes) {
-    double totalIngresado = 0.0;
-    int cantidadTotal = 0;
+    int totalProductos = 0;
+    double totalRecaudado = 0.0;
     unordered_map<string, int> productosVendidos;
 
     for (const Venta& venta : ventas) {
         if (venta.fecha.substr(0, 7) == mes) {
-            totalIngresado += venta.total;
-            cantidadTotal += venta.cantidad;
+            totalProductos += venta.cantidad;
+            totalRecaudado += venta.total;
             productosVendidos[venta.producto] += venta.cantidad;
         }
     }
 
-    if (productosVendidos.empty()) {
-        cout << "No se encontraron ventas para el mes " << mes << endl;
-    } else {
-        cout << "Total ingresado en el mes " << mes << ": $" << totalIngresado << endl;
-        cout << "Cantidad total de productos vendidos en el mes: " << cantidadTotal << endl;
+    string productoMasVendido, productoMenosVendido;
+    encontrarProductoMasYMenosVendido(productosVendidos, productoMasVendido, productoMenosVendido);
 
-        string productoMasVendido, productoMenosVendido;
-        encontrarProductoMasYMenosVendido(productosVendidos, productoMasVendido, productoMenosVendido);
-
-        cout << "Producto más vendido en el mes: " << productoMasVendido << endl;
-        cout << "Producto menos vendido en el mes: " << productoMenosVendido << endl;
-    }
+    cout << "Reporte de ventas para el mes " << mes << ":\n";
+    cout << "Total de productos vendidos: " << totalProductos << "\n";
+    cout << "Total recaudado: $" << totalRecaudado << "\n";
+    cout << "Producto mas vendido: " << productoMasVendido << "\n";
+    cout << "Producto menos vendido: " << productoMenosVendido << "\n";
 }
 
 // Reporte de ventas por año
 void reporteVentasPorAnio(const vector<Venta>& ventas, const string& anio) {
-    double totalIngresado = 0.0;
-    int cantidadTotal = 0;
+    int totalProductos = 0;
+    double totalRecaudado = 0.0;
     unordered_map<string, int> productosVendidos;
 
     for (const Venta& venta : ventas) {
         if (venta.fecha.substr(0, 4) == anio) {
-            totalIngresado += venta.total;
-            cantidadTotal += venta.cantidad;
+            totalProductos += venta.cantidad;
+            totalRecaudado += venta.total;
             productosVendidos[venta.producto] += venta.cantidad;
         }
     }
 
-    if (productosVendidos.empty()) {
-        cout << "No se encontraron ventas para el año " << anio << endl;
-    } else {
-        cout << "Total ingresado en el año " << anio << ": $" << totalIngresado << endl;
-        cout << "Cantidad total de productos vendidos en el año: " << cantidadTotal << endl;
+    string productoMasVendido, productoMenosVendido;
+    encontrarProductoMasYMenosVendido(productosVendidos, productoMasVendido, productoMenosVendido);
 
-        string productoMasVendido, productoMenosVendido;
-        encontrarProductoMasYMenosVendido(productosVendidos, productoMasVendido, productoMenosVendido);
-
-        cout << "Producto más vendido en el año: " << productoMasVendido << endl;
-        cout << "Producto menos vendido en el año: " << productoMenosVendido << endl;
-    }
+    cout << "Reporte de ventas para el año " << anio << ":\n";
+    cout << "Total de productos vendidos: " << totalProductos << "\n";
+    cout << "Total recaudado: $" << totalRecaudado << "\n";
+    cout << "Producto mas vendido: " << productoMasVendido << "\n";
+    cout << "Producto menos vendido: " << productoMenosVendido << "\n";
 }
 
-// Menú principal
+// Menú de reportes
 void Menureporte() {
     vector<Venta> ventas = cargarVentas();
     int opcion;
     string fecha, mes, anio;
 
     do {
-        cout << "\nMenu de reportes:" << endl;
-        cout << "1. Reporte de ventas por dia" << endl;
-        cout << "2. Reporte de ventas por mes" << endl;
-        cout << "3. Reporte de ventas por anio" << endl;
-        cout << "4. Salir" << endl;
+        cout << "\nMenu de Reportes:\n";
+        cout << "1. Reporte por dia\n";
+        cout << "2. Reporte por mes\n";
+        cout << "3. Reporte por anio\n";
+        cout << "4. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
@@ -184,15 +148,16 @@ void Menureporte() {
                 reporteVentasPorMes(ventas, mes);
                 break;
             case 3:
-                cout << "Ingrese el año (YYYY): ";
+                cout << "Ingrese el anio (YYYY): ";
                 cin >> anio;
                 reporteVentasPorAnio(ventas, anio);
                 break;
             case 4:
-                cout << "Saliendo del programa." << endl;
+                cout << "Saliendo del menu de reportes.\n";
                 break;
             default:
-                cout << "Opcion invalida. Intente de nuevo." << endl;
+                cout << "Opcion invalida. Intente de nuevo.\n";
         }
     } while (opcion != 4);
 }
+

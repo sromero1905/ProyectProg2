@@ -51,8 +51,6 @@
 		<Unit filename="data/reportes.txt" />
 		<Unit filename="data/ventas.txt" />
 		<Unit filename="main.cpp" />
-		<Unit filename="utils/FuncionesAuxiliares.cpp" />
-		<Unit filename="utils/FuncionesAuxiliares.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

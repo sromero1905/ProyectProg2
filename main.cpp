@@ -20,10 +20,9 @@ void mostrarMenuPrincipal() {
         cout << "----- Menú Principal -----\n";
         cout << "1. Gestión de Inventario\n";
         cout << "2. Registro de Ventas\n";
-        cout << "3. Gestión de Promociones\n";
-        cout << "4. Historial de Ventas\n";
-        cout << "5. Reportes\n";
-        cout << "6. Salir\n";
+        cout << "3. Historial de Ventas\n";
+        cout << "4. Reportes\n";
+        cout << "5. Salir\n";
         cout << "Selecciona una opción: ";
         cin >> opcion;
 
@@ -38,16 +37,14 @@ void mostrarMenuPrincipal() {
                 moduloVentas.mostrarMenuVentas(); // Llama al menú de ventas
                 break;
             }
+
             case 3:
-                // Implementar gestión de promociones
-                break;
-            case 4:
                 mostrarMenuHistorialVentas();  // Llama al menú de historial de ventas
                 break;
-            case 5:
+            case 4:
                 Menureporte(); // Llama al menú de reportes
                 break;
-            case 6:
+            case 5:
                 cout << "Saliendo del programa.\n";
                 break;
             default:

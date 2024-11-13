@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <unordered_map>
+#include <limits>
 
 // Cargar ventas desde archivo de texto
 vector<Venta> cargarVentas() {
@@ -121,7 +122,6 @@ void reporteVentasPorAnio(const vector<Venta>& ventas, const string& anio) {
     cout << "Producto menos vendido: " << productoMenosVendido << "\n";
 }
 
-// Menú de reportes
 void Menureporte() {
     vector<Venta> ventas = cargarVentas();
     int opcion;
@@ -135,6 +135,14 @@ void Menureporte() {
         cout << "4. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
+
+        // Verificar si la entrada es un número válido
+        if (cin.fail()) {
+            cin.clear(); // Limpiar el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar la entrada no válida
+            cout << "Por favor, ingrese un número válido.\n";
+            continue; // Volver a pedir la opción
+        }
 
         switch (opcion) {
             case 1:
@@ -160,4 +168,3 @@ void Menureporte() {
         }
     } while (opcion != 4);
 }
-

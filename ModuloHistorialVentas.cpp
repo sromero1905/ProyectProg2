@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <unordered_map>
+#include <limits>
 
 using namespace std;
 
@@ -20,10 +21,10 @@ void ModuloHistorialVentas::verHistorialVentas() {
     }
     file.close();
 }
-
 void ModuloHistorialVentas::buscarPorFecha() {
     string fecha;
     cout << "Ingrese la fecha (ejemplo: 2023-12-31): ";
+    cin.ignore(); // Limpiar cualquier entrada residual
     getline(cin, fecha);
 
     ifstream file("ventas.txt");
@@ -33,12 +34,20 @@ void ModuloHistorialVentas::buscarPorFecha() {
     }
 
     string line;
+    bool ventasEncontradas = false;
     cout << "Ventas en la fecha: " << fecha << "\n";
     while (getline(file, line)) {
-        if (line.find(fecha) != string::npos) {
+        // Buscar la fecha al inicio de la línea
+        if (line.find(fecha) == 0) { // Busca si la línea empieza con la fecha
             cout << line << endl;
+            ventasEncontradas = true;
         }
     }
+
+    if (!ventasEncontradas) {
+        cout << "No se encontraron ventas para la fecha: " << fecha << endl;
+    }
+
     file.close();
 }
 
@@ -110,7 +119,7 @@ void ModuloHistorialVentas::buscarPorProducto(const string& producto) {
     file.close();
 }
 
-// Implementación del menú de historial de ventas
+
 void mostrarMenuHistorialVentas() {
     ModuloHistorialVentas historialVentas;
     int opcion;
@@ -123,7 +132,14 @@ void mostrarMenuHistorialVentas() {
         cout << "4. Volver al menú principal\n";
         cout << "Selecciona una opción: ";
         cin >> opcion;
-        cin.ignore(); // Limpiar el buffer de entrada
+
+        // Validar la entrada
+        if (cin.fail()) {
+            cin.clear(); // Limpia el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignora la entrada no válida
+            cout << "Por favor ingresa un número válido.\n";
+            continue; // Vuelve a pedir la opción
+        }
 
         switch (opcion) {
             case 1: {
@@ -137,17 +153,16 @@ void mostrarMenuHistorialVentas() {
             case 3: {
                 string producto;
                 cout << "Ingrese el nombre del producto: ";
+                cin.ignore();
                 getline(cin, producto);
                 historialVentas.buscarPorProducto(producto);
                 break;
             }
-
-
-            case 5:
+            case 4:
                 cout << "Volviendo al menú principal.\n";
                 break;
             default:
                 cout << "Opción no válida, intenta de nuevo.\n";
         }
-    } while (opcion != 5);
+    } while (opcion != 4);
 }

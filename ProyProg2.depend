@@ -3,13 +3,14 @@
 
 12 <<<<<<< Updated upstream
 
-1731429120 source:c:\users\santiago\desktop\proyprog2\main.cpp
+1731456032 source:c:\users\santiago\desktop\proyprog2\main.cpp
 	<iostream>
 	"ModuloInventario.h"
 	"ModuloVentas.h"
 	"ModuloPromociones.h"
 	"ModuloHistorialVentas.h"
 	"ModuloReportes.h"
+	<limits>
 
 1730765872 shed changes
 
@@ -46,7 +47,7 @@
 
 1730465579 source:c:\users\santiago\desktop\proyprog2\utils\utilidades.cpp
 
-1731426563 c:\users\santiago\desktop\proyprog2\moduloinventario.h
+1731456414 c:\users\santiago\desktop\proyprog2\moduloinventario.h
 	<vector>
 	<string>
 
@@ -67,31 +68,34 @@
 	<string>
 	<unordered_map>
 
-1731429121 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
+1731456165 source:c:\users\santiago\desktop\proyprog2\modulohistorialventas.cpp
 	"modulohistorialventas.h"
 	<iostream>
 	<fstream>
 	<string>
 	<unordered_map>
+	<limits>
 
-1731426563 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
+1731456225 source:c:\users\santiago\desktop\proyprog2\moduloinventario.cpp
 	"ModuloInventario.h"
 	<iostream>
 	<fstream>
 	<sstream>
 	<vector>
+	<limits>
 
 1731270606 source:c:\users\santiago\desktop\proyprog2\modulopromociones.cpp
 
-1731413215 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
+1731456397 source:c:\users\santiago\desktop\proyprog2\moduloreportes.cpp
 	"ModuloReportes.h"
 	<fstream>
 	<sstream>
 	<unordered_map>
+	<limits>
 
 1730989053 ortes.h"
 
-1731428844 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
+1731456281 source:c:\users\santiago\desktop\proyprog2\moduloventas.cpp
 	"ModuloVentas.h"
 	"ModuloInventario.h"
 	<iostream>
@@ -99,6 +103,7 @@
 	<sstream>
 	<ctime>
 	<iomanip>
+	<limits>
 
 1731270606 c:\users\santiago\desktop\proyprog2\utils\funcionesauxiliares.h
 	<string>

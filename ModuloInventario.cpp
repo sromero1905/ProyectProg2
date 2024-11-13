@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -177,8 +178,6 @@ void consultarStock() {
         cout << "Opción no válida.\n";
     }
 }
-
-// Función principal para gestionar el inventario
 void gestionarInventario() {
     cargarCategorias();
     int opcion;
@@ -192,13 +191,33 @@ void gestionarInventario() {
         cout << "Seleccione una opción: ";
         cin >> opcion;
 
+        // Verificar si la entrada es un número válido
+        if (cin.fail()) {
+            cin.clear(); // Limpiar el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar la entrada no válida
+            cout << "Por favor, ingrese un número válido.\n";
+            continue; // Volver a pedir la opción
+        }
+
         switch (opcion) {
-            case 1: agregarProducto(); break;
-            case 2: agregarCategoria(); break;
-            case 3: consultarStock(); break;
-            case 4: listarCategorias(); break;
-            case 5: break; // Regresar
-            default: cout << "Opción no válida.\n"; break;
+            case 1:
+                agregarProducto();
+                break;
+            case 2:
+                agregarCategoria();
+                break;
+            case 3:
+                consultarStock();
+                break;
+            case 4:
+                listarCategorias();
+                break;
+            case 5:
+                cout << "Regresando al menú principal.\n";
+                break; // Regresar
+            default:
+                cout << "Opción no válida, intenta de nuevo.\n";
+                break;
         }
     } while (opcion != 5);
 }

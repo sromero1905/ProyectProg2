@@ -1,9 +1,10 @@
 #include <iostream>
 #include "ModuloInventario.h"
-#include "ModuloVentas.h"       // Incluir el módulo de ventas
+#include "ModuloVentas.h"
 #include "ModuloPromociones.h"
 #include "ModuloHistorialVentas.h"
 #include "ModuloReportes.h"
+#include <limits>
 
 using namespace std;
 
@@ -13,7 +14,6 @@ int main() {
     mostrarMenuPrincipal();
     return 0;
 }
-
 void mostrarMenuPrincipal() {
     int opcion;
     do {
@@ -26,6 +26,14 @@ void mostrarMenuPrincipal() {
         cout << "Selecciona una opción: ";
         cin >> opcion;
 
+        // Validar la entrada
+        if (cin.fail()) {
+            cin.clear(); // Limpia el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignora la entrada no válida
+            cout << "Por favor ingresa un número válido.\n";
+            continue; // Vuelve a pedir la opción
+        }
+
         // Ejecuta la opción seleccionada
         switch (opcion) {
             case 1:
@@ -37,7 +45,6 @@ void mostrarMenuPrincipal() {
                 moduloVentas.mostrarMenuVentas(); // Llama al menú de ventas
                 break;
             }
-
             case 3:
                 mostrarMenuHistorialVentas();  // Llama al menú de historial de ventas
                 break;
@@ -50,6 +57,5 @@ void mostrarMenuPrincipal() {
             default:
                 cout << "Opción no válida, intenta de nuevo.\n";
         }
-    } while (opcion != 6);
+    } while (opcion != 5);
 }
-

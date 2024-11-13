@@ -5,6 +5,7 @@
 #include <sstream>
 #include <ctime>
 #include <iomanip>
+#include <limits>
 
 using namespace std;
 
@@ -18,6 +19,14 @@ void ModuloVentas::mostrarMenuVentas() {
         cout << "4. Volver al Menú Principal\n";
         cout << "Seleccione una opción: ";
         cin >> opcion;
+
+        // Verificar si la entrada es un número válido
+        if (cin.fail()) {
+            cin.clear(); // Limpiar el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar la entrada no válida
+            cout << "Por favor, ingrese un número válido.\n";
+            continue; // Volver a pedir la opción
+        }
 
         switch (opcion) {
             case 1:
